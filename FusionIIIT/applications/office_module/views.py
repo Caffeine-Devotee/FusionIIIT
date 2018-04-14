@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.contrib.auth.models import User 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
@@ -70,3 +71,46 @@ def appoint(request):
     appointobj.save()
 
     return HttpResponseRedirect("/office/directorOffice/")
+=======
+from django.shortcuts import render
+
+
+def officeOfDeanStudents(request):
+    context = {}
+
+    return render(request, "officeModule/officeOfDeanStudents/officeOfDeanStudents.html", context)
+
+
+def officeOfPurchaseOfficr(request):
+    return render(request, "officeModule/officeOfPurchaseOfficer/officeOfPurchaseOfficer.html", {})
+
+
+def officeOfRegistrar(request):
+    context = {}
+
+    return render(request, "officeModule/officeOfRegistrar/officeOfRegistrar.html", context)
+
+
+def officeOfDeanRSPC(request):
+    context = {}
+
+    return render(request, "officeModule/officeOfDeanRSPC/officeOfDeanRSPC.html", context)
+
+
+def officeOfDeanPnD(request):
+    context = {}
+
+    return render(request, "officeModule/officeOfDeanPnD/officeOfDeanPnD.html", context)
+
+
+def officeOfHOD(request):
+    context = {}
+
+    return render(request, "officeModule/officeOfHOD/officeOfHOD.html", context)
+
+
+def genericModule(request):
+    context = {}
+
+    return render(request, "officeModule/genericModule/genericModule.html", context)
+>>>>>>> 8840ea3da5f4a670a7683a29f89c0509c75da90e
