@@ -1,7 +1,7 @@
 from django.db import models
 
 from applications.globals.models import ExtraInfo
-
+import datetime
 
 class Constants:
     HOLIDAY_TYPE = (
@@ -60,16 +60,16 @@ class Course(models.Model):
 
 class Meeting(models.Model):
     venue = models.CharField(max_length=50)
-    date = models.DateField()
-    time = models.CharField(max_length=20)
+    date = models.DateField(blank=True,null=True)
+    #time = models.CharField(max_length=20)
     agenda = models.TextField()
-    minutes_file = models.CharField(max_length=40)
+    minutes_file = models.FileField(max_length=40,null=True,blank=True)
 
     class Meta:
         db_table = 'Meeting'
 
     def __str__(self):
-        return self.date
+        return str(self.date)
 
 
 class Calendar(models.Model):
